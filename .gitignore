@@ -1,0 +1,10 @@
+*
+!.gitignore
+!00_README.txt
+# Rapports HTML
+!*.html
+
+# Dossier figures avec graphiques
+!sorties/
+!sorties/figures/
+!sorties/figures/**

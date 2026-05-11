@@ -1,10 +1,12 @@
+# Exclure tous les fichiers
 *
 !.gitignore
-!00_README.txt
-# Rapports HTML
-!*.html
 
-# Dossier figures avec graphiques
-!sorties/
-!sorties/figures/
-!sorties/figures/**
+# GARDER SEULEMENT :
+!docs/
+!docs/**
+!*.html
+!05_rapport_graphiques_analyses.Rmd
+!06_generer_rapport_html.R
+!GUIDE_GITHUB.md
+!README_RAPPORT.md

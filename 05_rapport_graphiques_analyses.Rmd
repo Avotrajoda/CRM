@@ -1,0 +1,651 @@
+---
+title: "Rapport d'Analyse — Enquête KAP Mpox"
+subtitle: "Résultats détaillés et visualisations interactives"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    toc_depth: 2
+    number_sections: true
+    df_print: paged
+---
+
+```{css, echo=FALSE}
+/* ── En-tête logo ── */
+.logo-header {
+  text-align: center;
+  padding: 20px 0 10px 0;
+  border-bottom: 3px solid #D62B2B;
+  margin-bottom: 25px;
+}
+.logo-header img {
+  width: 160px;
+}
+.logo-header h1 {
+  color: #2C3E50;
+  font-size: 1.7em;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.logo-header p {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* ── Conteneur graphique avec description ── */
+.graph-container {
+  background: #f8f9fa;
+  border-left: 5px solid #D62B2B;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 25px 0;
+}
+.graph-container h3 {
+  color: #2C3E50;
+  margin-top: 0;
+  font-size: 1.3em;
+}
+.graph-wrapper {
+  text-align: center;
+  margin: 15px 0;
+}
+.graph-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ── Description et interprétation ── */
+.description {
+  background: white;
+  border-left: 4px solid #27AE60;
+  padding: 12px 15px;
+  margin: 12px 0;
+  font-size: 0.95em;
+  color: #333;
+}
+.description strong {
+  color: #2C3E50;
+}
+
+.interpretation {
+  background: #e8f5e9;
+  border-left: 4px solid #27AE60;
+  padding: 12px 15px;
+  margin: 12px 0;
+  font-size: 0.95em;
+  color: #1b5e20;
+}
+.interpretation strong {
+  color: #1b5e20;
+}
+
+/* ── Boutons de téléchargement ── */
+.download-btn {
+  display: inline-block;
+  background-color: #D62B2B;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 8px 4px;
+  transition: background-color 0.3s;
+}
+.download-btn:hover {
+  background-color: #b81f1f;
+  text-decoration: none;
+  color: white;
+}
+
+.button-group {
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* ── Palettes et alertes ── */
+.stat-box {
+  background: #f8f9fa;
+  border-left: 5px solid #D62B2B;
+  border-radius: 4px;
+  padding: 12px 18px;
+  margin: 8px 0;
+}
+.stat-box .val {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #D62B2B;
+}
+.stat-box .lbl {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 40px;
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+.footer p {
+  margin: 5px 0;
+}
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.align = "center")
+
+library(dplyr)
+library(tidyr)
+library(readxl)
+library(ggplot2)
+library(scales)
+library(stringr)
+library(forcats)
+library(here)
+library(htmlwidgets)
+
+# ── Chemins ──────────────────────────────────────────────────────────────────
+LOGO <- "C:/Users/Administrateur/OneDrive - CROIX-ROUGE MALAGASY/Pictures/kandra/croix_rouge_malagasy.png"
+DIR_DATA <- "D:/Avotra/asa/kobo/mpox/projet_mpox/sorties"
+DIR_FIGURES <- file.path(DIR_DATA, "figures")
+
+# ── Charger les données nettoyées ─────────────────────────────────────────────
+df <- read_excel(file.path(DIR_DATA, "mpox_nettoye.xlsx"))
+
+# ── Résumé de l'enquête ───────────────────────────────────────────────────────
+n_obs <- nrow(df)
+date_min <- format(min(as.Date(df$date), na.rm = TRUE), "%d/%m/%Y")
+date_max <- format(max(as.Date(df$date), na.rm = TRUE), "%d/%m/%Y")
+n_regions <- n_distinct(df$region)
+```
+
+<!-- ── EN-TÊTE ─────────────────────────────────────────────────────────────── -->
+<div class="logo-header">
+<img src="`r LOGO`" alt="Logo Croix-Rouge Malagasy"/>
+<h1>Rapport d'Analyse MPOX</h1>
+<p>Résultats KAP — Croix-Rouge Malagasy &nbsp;|&nbsp; `r format(Sys.Date(), '%B %Y')`</p>
+</div>
+
+---
+
+# Résumé exécutif
+
+```{r resume, results='asis'}
+cat(sprintf('<div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:20px;">
+<div class="stat-box" style="flex:1; min-width:140px;">
+  <div class="val">%d</div>
+  <div class="lbl">Répondants</div>
+</div>
+<div class="stat-box" style="flex:1; min-width:140px;">
+  <div class="val">%d</div>
+  <div class="lbl">Régions</div>
+</div>
+<div class="stat-box" style="flex:1; min-width:140px;">
+  <div class="val">%s</div>
+  <div class="lbl">Période</div>
+</div>
+</div>', n_obs, n_regions, paste(date_min, "→", date_max)))
+```
+
+Ce rapport présente les principaux résultats de l'enquête **Knowledge, Attitudes, and Practices (KAP)** relative au Mpox menée par la Croix-Rouge Malagasy. Les visualisations ci-dessous sont organisées par thème avec des descriptions et interprétations détaillées.
+
+---
+
+# SECTION A — CONTEXTE DE L'ÉPIDÉMIE
+
+## A1. Connaissance du Mpox
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r a1-graph}
+if (file.exists(file.path(DIR_FIGURES, "A1_connaissance_mpox.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "A1_connaissance_mpox.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'A1_connaissance_mpox.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Ce graphique présente le pourcentage de répondants ayant entendu parler du Mpox avant l'enquête. La mesure inclut tous les participants indépendamment de la profondeur de leur connaissance.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Un taux élevé de connaissance indique une bonne pénétration des messages de sensibilisation. Un taux plus faible suggère le besoin de campagnes de communication renforcées dans les zones ou populations ciblées.
+</div>
+
+</div>
+
+## A2. Présence du Mpox dans la communauté
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r a2-graph}
+if (file.exists(file.path(DIR_FIGURES, "A2_mpox_communaute.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "A2_mpox_communaute.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'A2_mpox_communaute.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Mesure la perception des répondants quant à la présence du Mpox dans leur communauté immédiate (village, quartier, district).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> La perception du risque local est un indicateur clé du besoin de renforcer les mesures de santé publique. Elle influence aussi l'adoption de comportements préventifs.
+</div>
+
+</div>
+
+---
+
+# SECTION B — FACTEURS DE RISQUE PERÇUS
+
+## B1. Facteurs de vulnérabilité identifiés
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r b1-graph}
+if (file.exists(file.path(DIR_FIGURES, "B1_facteurs_vulnerabilite.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "B1_facteurs_vulnerabilite.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'B1_facteurs_vulnerabilite.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Répartition des facteurs considérés comme rendant une personne plus vulnérable au Mpox (pauvreté, malnutrition, accès limité aux soins, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Identifie les groupes de population perçus comme les plus à risque. Aide à cibler les interventions de prévention et d'accès aux services de santé.
+</div>
+
+</div>
+
+---
+
+# SECTION D — SOURCES D'INFORMATION
+
+## D1. Sources d'information utilisées
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r d1-graph}
+if (file.exists(file.path(DIR_FIGURES, "D1_sources_information.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "D1_sources_information.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'D1_sources_information.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Canaux par lesquels les répondants reçoivent des informations sur le Mpox (radio, TV, agents de santé, réseaux sociaux, bouche-à-oreille, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Oriente la stratégie de communication. Les sources dominantes sont les plus efficaces pour diffuser les messages de santé publique.
+</div>
+
+</div>
+
+## D4. Sources d'information fiables
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r d4-graph}
+if (file.exists(file.path(DIR_FIGURES, "D4_sources_confiance_lollipop.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "D4_sources_confiance_lollipop.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'D4_sources_confiance_lollipop.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Identifie les sources d'information considérées comme fiables et crédibles par les répondants (agents de santé, CRM, gouvernement, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> La CRM figure-t-elle parmi les sources de confiance ? C'est un indicateur de crédibilité de l'organisation. Les partenaires moins fiables nécessitent un renforcement de capacités ou une meilleure communication.
+</div>
+
+</div>
+
+## D5. Langue souhaitée pour l'information
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r d5-graph}
+if (file.exists(file.path(DIR_FIGURES, "D5_langue_souhaitee.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "D5_langue_souhaitee.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'D5_langue_souhaitee.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Préférence linguistique des répondants pour recevoir les informations (français vs malagasy). Important pour l'adaptation des messages.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Un taux élevé en malagasy indique l'importance de produire des matériels en langue locale pour assurer la compréhension et l'adoption des messages de prévention.
+</div>
+
+</div>
+
+---
+
+# SECTION E — VACCINATION
+
+## E1. Connaissance du vaccin Mpox
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r e1-graph}
+if (file.exists(file.path(DIR_FIGURES, "E1_connaissance_vaccin.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "E1_connaissance_vaccin.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'E1_connaissance_vaccin.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Pourcentage de répondants ayant entendu parler d'un vaccin contre le Mpox et percevoir les sources de cette information.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Le faible taux de connaissance du vaccin nécessite une intensification des campagnes d'information, notamment auprès des groupes vulnérables.
+</div>
+
+</div>
+
+## E2. Intention de vaccination
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r e2-graph}
+if (file.exists(file.path(DIR_FIGURES, "E2_intention_vaccination.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "E2_intention_vaccination.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'E2_intention_vaccination.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Répartition des intentions de vaccination parmi les répondants sensibilisés au vaccin (prêt à se vacciner, hésitant, refusant).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Identifie les barrières à la vaccination (craintes, doutes, accès) et guide les stratégies d'amélioration de la couverture vaccinale.
+</div>
+
+</div>
+
+---
+
+# SECTION F — DISCRIMINATION ET STIGMATISATION
+
+## F1. Groupes perçus comme victimes de discrimination
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r f1-graph}
+if (file.exists(file.path(DIR_FIGURES, "F1_groupes_discrimination.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "F1_groupes_discrimination.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'F1_groupes_discrimination.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Groupes de population identifiés comme subissant une discrimination liée au Mpox (personnes atteintes, contacts, certaines professions, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> La discrimination affecte le dépistage, le traitement et l'engagement communautaire. Ces groupes ont besoin de support psychosocial et de protection contre les abus.
+</div>
+
+</div>
+
+## G3. Groupes perçus comme victimes de discrimination (autres sources)
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r g3-graph}
+if (file.exists(file.path(DIR_FIGURES, "G3_groupes_discrimination.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "G3_groupes_discrimination.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'G3_groupes_discrimination.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Groupes supplémentaires identifiés par d'autres sources ou répondants comme victimes de discrimination liée au Mpox.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Complète la vue d'ensemble des groupes vulnérables et oriente les actions de plaidoyer et de protection.
+</div>
+
+</div>
+
+## G4. Solutions proposées pour réduire la stigmatisation
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r g4-graph}
+if (file.exists(file.path(DIR_FIGURES, "G4_solutions_stigmatisation.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "G4_solutions_stigmatisation.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'G4_solutions_stigmatisation.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Solutions proposées par les répondants pour réduire la stigmatisation (sensibilisation, isolement, isolation sociale, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Reflète la compréhension communautaire des causes de la stigmatisation et les actions perçues comme efficaces pour la combattre. Essentiel pour co-concevoir les interventions.
+</div>
+
+</div>
+
+---
+
+# SECTION H — ENGAGEMENT COMMUNAUTAIRE
+
+## H1. Acteurs représentant la communauté
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r h1-graph}
+if (file.exists(file.path(DIR_FIGURES, "H1_representants_communaute.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "H1_representants_communaute.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'H1_representants_communaute.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Acteurs ou structures identifiés comme représentants de la communauté dans la réponse au Mpox (leaders communautaires, agents de santé, ONG, gouvernement, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Identifie les canaux privilégiés de communication et de mobilisation communautaire. Oriente le partenariat et le renforcement des capacités.
+</div>
+
+</div>
+
+## H2. Avis consulté par les autorités
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r h2-graph}
+if (file.exists(file.path(DIR_FIGURES, "H2_avis_consulte.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "H2_avis_consulte.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'H2_avis_consulte.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Proportion de répondants ayant été consultés par les autorités (gouvernement, santé, administration) sur la réponse au Mpox.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Mesure le degré d'inclusion des communautés dans la prise de décision. Un taux élevé indique une gouvernance participative et renforcée.
+</div>
+
+</div>
+
+## H3. Connaissance d'un mécanisme de feedback
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r h3-graph}
+if (file.exists(file.path(DIR_FIGURES, "H3_connaissance_feedback.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "H3_connaissance_feedback.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'H3_connaissance_feedback.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Proportion de répondants connaissant l'existence d'un mécanisme pour fournir des retours, des plaintes ou des suggestions aux autorités sanitaires.
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Un faible taux indique le besoin de mieux promouvoir les canaux de rétroaction et d'assurer leur accessibilité.
+</div>
+
+</div>
+
+## H4. Canaux préférés pour le feedback
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r h4-graph}
+if (file.exists(file.path(DIR_FIGURES, "H4_canaux_feedback.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "H4_canaux_feedback.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'H4_canaux_feedback.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Canaux préférés par les répondants pour transmettre feedback, plaintes ou suggestions (téléphone, visite à domicile, email, SMS, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> Oriente la mise en place et la promotion des mécanismes de feedback. Les canaux les plus accessibles doivent être priorisés.
+</div>
+
+</div>
+
+## H5. Acteurs de confiance pour l'engagement communautaire
+
+<div class="graph-container">
+
+<div class="graph-wrapper">
+```{r h5-graph}
+if (file.exists(file.path(DIR_FIGURES, "H5_acteurs_confiance_engagement.png"))) {
+  knitr::include_graphics(file.path(DIR_FIGURES, "H5_acteurs_confiance_engagement.png"))
+}
+```
+</div>
+
+<div class="button-group">
+<a href="`r file.path(DIR_FIGURES, 'H5_acteurs_confiance_engagement.png')`" class="download-btn" download>⬇️ Télécharger PNG</a>
+</div>
+
+<div class="description">
+<strong>Description :</strong> Structures ou acteurs de confiance pour impulser la participation communautaire dans la réponse au Mpox (agents de santé, leaders, comités, etc.).
+</div>
+
+<div class="interpretation">
+<strong>Interprétation :</strong> La confiance est essentielle pour l'engagement. Les acteurs de confiance identifiés doivent être renforcés et impliqués dans tous les niveaux de la réponse.
+</div>
+
+</div>
+
+---
+
+<div class="footer">
+<p style="font-weight:bold;">Avotra — Database Manager</p>
+<p>Croix-Rouge Malagasy</p>
+<p style="color:#999; font-size:0.8em;">Rapport généré le `r format(Sys.Date(), "%d %B %Y")`</p>
+<p style="color:#999; font-size:0.8em;">Tous les graphiques sont téléchargeables en PNG pour présentation ou publication.</p>
+</div>

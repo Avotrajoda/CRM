@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(R --vanilla --quiet)",
+      "Read(//c/Users/Administrateur/OneDrive - CROIX-ROUGE MALAGASY/Pictures/kandra/**)",
+      "Read(//c/Users/Administrateur/OneDrive - CROIX-ROUGE MALAGASY/Pictures/**)",
+      "Bash(Rscript -e \" library\\(readxl\\) df <- read_excel\\('sorties/mpox_nettoye.xlsx', n_max=0\\) cols <- names\\(df\\) cat\\(paste\\(cols, collapse='\\\\n'\\)\\) \")"
+    ]
+  }
+}

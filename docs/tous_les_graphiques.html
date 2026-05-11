@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les graphiques - Enquête KAP Mpox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; text-align: center; padding: 40px 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #D62B2B; }
+        .header img { width: 120px; margin-bottom: 15px; }
+        .header h1 { color: #D62B2B; font-size: 2.5em; margin-bottom: 10px; }
+        .header p { color: #666; font-size: 1.1em; }
+        .stats { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .stat { background: #f8f9fa; padding: 15px 25px; border-radius: 4px; border-left: 4px solid #D62B2B; }
+        .stat-value { font-size: 1.8em; font-weight: bold; color: #D62B2B; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 30px; }
+        .graph-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .graph-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+        .graph-image { width: 100%; height: 250px; object-fit: cover; background: #f8f9fa; }
+        .graph-title { padding: 15px; color: #D62B2B; font-weight: bold; font-size: 0.95em; border-bottom: 1px solid #eee; word-wrap: break-word; }
+        .graph-actions { padding: 12px 15px; text-align: center; }
+        .download-btn { display: inline-block; background: #D62B2B; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 0.9em; font-weight: bold; transition: background 0.3s; }
+        .download-btn:hover { background: #A01F1F; }
+        .footer { text-align: center; color: #666; margin-top: 50px; padding: 30px; background: white; border-radius: 8px; font-size: 0.9em; }
+        .footer p { margin: 5px 0; }
+        @media (max-width: 768px) { .gallery { grid-template-columns: 1fr; } .header h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Tous les graphiques</h1>
+            <p>Enquête KAP Mpox — Croix-Rouge Malagasy</p>
+            <div class="stat"><div class="stat-value">53</div><div class="stat-label">Graphiques</div></div>
+        </div>
+        <div class="gallery">
+            <div class="graph-card">
+                <img src="figures/A_dashboard_connaissance.png" alt="A Dashboard Connaissance" class="graph-image">
+                <div class="graph-title">A Dashboard Connaissance</div>
+                <div class="graph-actions">
+                    <a href="figures/A_dashboard_connaissance.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/A1_sensibilisation.png" alt="A1 Sensibilisation" class="graph-image">
+                <div class="graph-title">A1 Sensibilisation</div>
+                <div class="graph-actions">
+                    <a href="figures/A1_sensibilisation.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/A2_transmission.png" alt="A2 Transmission" class="graph-image">
+                <div class="graph-title">A2 Transmission</div>
+                <div class="graph-actions">
+                    <a href="figures/A2_transmission.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/A3_symptomes.png" alt="A3 Symptomes" class="graph-image">
+                <div class="graph-title">A3 Symptomes</div>
+                <div class="graph-actions">
+                    <a href="figures/A3_symptomes.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/A4_prevention.png" alt="A4 Prevention" class="graph-image">
+                <div class="graph-title">A4 Prevention</div>
+                <div class="graph-actions">
+                    <a href="figures/A4_prevention.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/A5_score_connaissance.png" alt="A5 Score Connaissance" class="graph-image">
+                <div class="graph-title">A5 Score Connaissance</div>
+                <div class="graph-actions">
+                    <a href="figures/A5_score_connaissance.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B1_realite_mpox.png" alt="B1 Realite Mpox" class="graph-image">
+                <div class="graph-title">B1 Realite Mpox</div>
+                <div class="graph-actions">
+                    <a href="figures/B1_realite_mpox.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B2_mpox_communaute.png" alt="B2 Mpox Communaute" class="graph-image">
+                <div class="graph-title">B2 Mpox Communaute</div>
+                <div class="graph-actions">
+                    <a href="figures/B2_mpox_communaute.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B3_origines_rumeurs.png" alt="B3 Origines Rumeurs" class="graph-image">
+                <div class="graph-title">B3 Origines Rumeurs</div>
+                <div class="graph-actions">
+                    <a href="figures/B3_origines_rumeurs.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B4_niveau_peur.png" alt="B4 Niveau Peur" class="graph-image">
+                <div class="graph-title">B4 Niveau Peur</div>
+                <div class="graph-actions">
+                    <a href="figures/B4_niveau_peur.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B5_groupes_risque.png" alt="B5 Groupes Risque" class="graph-image">
+                <div class="graph-title">B5 Groupes Risque</div>
+                <div class="graph-actions">
+                    <a href="figures/B5_groupes_risque.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B6_groupes_vulnerables.png" alt="B6 Groupes Vulnerables" class="graph-image">
+                <div class="graph-title">B6 Groupes Vulnerables</div>
+                <div class="graph-actions">
+                    <a href="figures/B6_groupes_vulnerables.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B7_adherence_rumeurs.png" alt="B7 Adherence Rumeurs" class="graph-image">
+                <div class="graph-title">B7 Adherence Rumeurs</div>
+                <div class="graph-actions">
+                    <a href="figures/B7_adherence_rumeurs.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B7b_rumeur_communication.png" alt="B7b Rumeur Communication" class="graph-image">
+                <div class="graph-title">B7b Rumeur Communication</div>
+                <div class="graph-actions">
+                    <a href="figures/B7b_rumeur_communication.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B8_perception_vs_realite.png" alt="B8 Perception Vs Realite" class="graph-image">
+                <div class="graph-title">B8 Perception Vs Realite</div>
+                <div class="graph-actions">
+                    <a href="figures/B8_perception_vs_realite.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/B9_rumeurs_par_canal_info.png" alt="B9 Rumeurs Par Canal Info" class="graph-image">
+                <div class="graph-title">B9 Rumeurs Par Canal Info</div>
+                <div class="graph-actions">
+                    <a href="figures/B9_rumeurs_par_canal_info.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C1_moments_lavage.png" alt="C1 Moments Lavage" class="graph-image">
+                <div class="graph-title">C1 Moments Lavage</div>
+                <div class="graph-actions">
+                    <a href="figures/C1_moments_lavage.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C2_produits_lavage.png" alt="C2 Produits Lavage" class="graph-image">
+                <div class="graph-title">C2 Produits Lavage</div>
+                <div class="graph-actions">
+                    <a href="figures/C2_produits_lavage.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C2b_barrieres_lavage_mains.png" alt="C2b Barrieres Lavage Mains" class="graph-image">
+                <div class="graph-title">C2b Barrieres Lavage Mains</div>
+                <div class="graph-actions">
+                    <a href="figures/C2b_barrieres_lavage_mains.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C3_isolement_faisabilite.png" alt="C3 Isolement Faisabilite" class="graph-image">
+                <div class="graph-title">C3 Isolement Faisabilite</div>
+                <div class="graph-actions">
+                    <a href="figures/C3_isolement_faisabilite.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C4_materiel_faisabilite.png" alt="C4 Materiel Faisabilite" class="graph-image">
+                <div class="graph-title">C4 Materiel Faisabilite</div>
+                <div class="graph-actions">
+                    <a href="figures/C4_materiel_faisabilite.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C5_decisionnaire_famille.png" alt="C5 Decisionnaire Famille" class="graph-image">
+                <div class="graph-title">C5 Decisionnaire Famille</div>
+                <div class="graph-actions">
+                    <a href="figures/C5_decisionnaire_famille.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C6_recours_soins.png" alt="C6 Recours Soins" class="graph-image">
+                <div class="graph-title">C6 Recours Soins</div>
+                <div class="graph-actions">
+                    <a href="figures/C6_recours_soins.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C7_intention_csb.png" alt="C7 Intention Csb" class="graph-image">
+                <div class="graph-title">C7 Intention Csb</div>
+                <div class="graph-actions">
+                    <a href="figures/C7_intention_csb.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C7b_connaissance_recours.png" alt="C7b Connaissance Recours" class="graph-image">
+                <div class="graph-title">C7b Connaissance Recours</div>
+                <div class="graph-actions">
+                    <a href="figures/C7b_connaissance_recours.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C8_distance_csb.png" alt="C8 Distance Csb" class="graph-image">
+                <div class="graph-title">C8 Distance Csb</div>
+                <div class="graph-actions">
+                    <a href="figures/C8_distance_csb.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/C9_barrieres_acces.png" alt="C9 Barrieres Acces" class="graph-image">
+                <div class="graph-title">C9 Barrieres Acces</div>
+                <div class="graph-actions">
+                    <a href="figures/C9_barrieres_acces.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/D1_canaux_divergent.png" alt="D1 Canaux Divergent" class="graph-image">
+                <div class="graph-title">D1 Canaux Divergent</div>
+                <div class="graph-actions">
+                    <a href="figures/D1_canaux_divergent.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/D2_utilite_informations.png" alt="D2 Utilite Informations" class="graph-image">
+                <div class="graph-title">D2 Utilite Informations</div>
+                <div class="graph-actions">
+                    <a href="figures/D2_utilite_informations.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/D3_barrieres_information.png" alt="D3 Barrieres Information" class="graph-image">
+                <div class="graph-title">D3 Barrieres Information</div>
+                <div class="graph-actions">
+                    <a href="figures/D3_barrieres_information.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/D4_sources_confiance_lollipop.png" alt="D4 Sources Confiance Lollipop" class="graph-image">
+                <div class="graph-title">D4 Sources Confiance Lollipop</div>
+                <div class="graph-actions">
+                    <a href="figures/D4_sources_confiance_lollipop.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/D5_langue_souhaitee.png" alt="D5 Langue Souhaitee" class="graph-image">
+                <div class="graph-title">D5 Langue Souhaitee</div>
+                <div class="graph-actions">
+                    <a href="figures/D5_langue_souhaitee.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E1_connaissance_vaccin.png" alt="E1 Connaissance Vaccin" class="graph-image">
+                <div class="graph-title">E1 Connaissance Vaccin</div>
+                <div class="graph-actions">
+                    <a href="figures/E1_connaissance_vaccin.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E2_rumeurs_vaccin.png" alt="E2 Rumeurs Vaccin" class="graph-image">
+                <div class="graph-title">E2 Rumeurs Vaccin</div>
+                <div class="graph-actions">
+                    <a href="figures/E2_rumeurs_vaccin.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E3_acceptation_vaccin.png" alt="E3 Acceptation Vaccin" class="graph-image">
+                <div class="graph-title">E3 Acceptation Vaccin</div>
+                <div class="graph-actions">
+                    <a href="figures/E3_acceptation_vaccin.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E4_raisons_refus_vaccin.png" alt="E4 Raisons Refus Vaccin" class="graph-image">
+                <div class="graph-title">E4 Raisons Refus Vaccin</div>
+                <div class="graph-actions">
+                    <a href="figures/E4_raisons_refus_vaccin.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E5_autonomie_vaccinale.png" alt="E5 Autonomie Vaccinale" class="graph-image">
+                <div class="graph-title">E5 Autonomie Vaccinale</div>
+                <div class="graph-actions">
+                    <a href="figures/E5_autonomie_vaccinale.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/E6_site_vaccination.png" alt="E6 Site Vaccination" class="graph-image">
+                <div class="graph-title">E6 Site Vaccination</div>
+                <div class="graph-actions">
+                    <a href="figures/E6_site_vaccination.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/F_satisfaction_divergent.png" alt="F Satisfaction Divergent" class="graph-image">
+                <div class="graph-title">F Satisfaction Divergent</div>
+                <div class="graph-actions">
+                    <a href="figures/F_satisfaction_divergent.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/F2_raisons_insatisfaction.png" alt="F2 Raisons Insatisfaction" class="graph-image">
+                <div class="graph-title">F2 Raisons Insatisfaction</div>
+                <div class="graph-actions">
+                    <a href="figures/F2_raisons_insatisfaction.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/F4_prevention_post_vaccin.png" alt="F4 Prevention Post Vaccin" class="graph-image">
+                <div class="graph-title">F4 Prevention Post Vaccin</div>
+                <div class="graph-actions">
+                    <a href="figures/F4_prevention_post_vaccin.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/G1_tabou_mpox.png" alt="G1 Tabou Mpox" class="graph-image">
+                <div class="graph-title">G1 Tabou Mpox</div>
+                <div class="graph-actions">
+                    <a href="figures/G1_tabou_mpox.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/G2_discrimination_observee.png" alt="G2 Discrimination Observee" class="graph-image">
+                <div class="graph-title">G2 Discrimination Observee</div>
+                <div class="graph-actions">
+                    <a href="figures/G2_discrimination_observee.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/G3_groupes_discrimination.png" alt="G3 Groupes Discrimination" class="graph-image">
+                <div class="graph-title">G3 Groupes Discrimination</div>
+                <div class="graph-actions">
+                    <a href="figures/G3_groupes_discrimination.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/G4_solutions_stigmatisation.png" alt="G4 Solutions Stigmatisation" class="graph-image">
+                <div class="graph-title">G4 Solutions Stigmatisation</div>
+                <div class="graph-actions">
+                    <a href="figures/G4_solutions_stigmatisation.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/H1_representants_communaute.png" alt="H1 Representants Communaute" class="graph-image">
+                <div class="graph-title">H1 Representants Communaute</div>
+                <div class="graph-actions">
+                    <a href="figures/H1_representants_communaute.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/H2_avis_consulte.png" alt="H2 Avis Consulte" class="graph-image">
+                <div class="graph-title">H2 Avis Consulte</div>
+                <div class="graph-actions">
+                    <a href="figures/H2_avis_consulte.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/H3_connaissance_feedback.png" alt="H3 Connaissance Feedback" class="graph-image">
+                <div class="graph-title">H3 Connaissance Feedback</div>
+                <div class="graph-actions">
+                    <a href="figures/H3_connaissance_feedback.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/H4_canaux_feedback.png" alt="H4 Canaux Feedback" class="graph-image">
+                <div class="graph-title">H4 Canaux Feedback</div>
+                <div class="graph-actions">
+                    <a href="figures/H4_canaux_feedback.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/H5_acteurs_confiance_engagement.png" alt="H5 Acteurs Confiance Engagement" class="graph-image">
+                <div class="graph-title">H5 Acteurs Confiance Engagement</div>
+                <div class="graph-actions">
+                    <a href="figures/H5_acteurs_confiance_engagement.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/J1_gap_connaissance_pratique.png" alt="J1 Gap Connaissance Pratique" class="graph-image">
+                <div class="graph-title">J1 Gap Connaissance Pratique</div>
+                <div class="graph-actions">
+                    <a href="figures/J1_gap_connaissance_pratique.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/J2_parcours_vaccinal.png" alt="J2 Parcours Vaccinal" class="graph-image">
+                <div class="graph-title">J2 Parcours Vaccinal</div>
+                <div class="graph-actions">
+                    <a href="figures/J2_parcours_vaccinal.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+            <div class="graph-card">
+                <img src="figures/K_dashboard_indicateurs.png" alt="K Dashboard Indicateurs" class="graph-image">
+                <div class="graph-title">K Dashboard Indicateurs</div>
+                <div class="graph-actions">
+                    <a href="figures/K_dashboard_indicateurs.png" class="download-btn" download>⬇️ Télécharger</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p><strong>Avotra — Database Manager</strong></p>
+            <p>Croix-Rouge Malagasy</p>
+            <p>Rapport généré le 11 mai 2026</p>
+            <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
+                Tous les graphiques sont téléchargeables en PNG pour présentation ou publication.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

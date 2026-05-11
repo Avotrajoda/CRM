@@ -35,7 +35,7 @@
           }
           .reports {
               display: grid;
-              grid-template-columns: 1fr 1fr;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
               gap: 30px;
               margin-top: 30px;
           }
@@ -103,6 +103,12 @@
                   <h2>📈 Analyse MPOX</h2>
                   <p>Résultats de l'enquête KAP avec graphiques, descriptions et interprétations.</p>
                   <a href="05_rapport_graphiques_analyses.html" class="btn">Voir le rapport</a>
+              </div>
+
+              <div class="report-card">
+                  <h2>🎨 Tous les Graphiques</h2>
+                  <p>Galerie complète avec tous les 53 graphiques de l'analyse et boutons de téléchargement.</p>
+                  <a href="tous_les_graphiques.html" class="btn">Voir la galerie</a>
               </div>
           </div>
 

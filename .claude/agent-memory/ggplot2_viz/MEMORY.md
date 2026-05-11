@@ -1,2 +1,0 @@
-- [Projet Mpox KAP Madagascar](project_mpox_kap.md) — structure, variables, fonctions utilitaires et palette du projet KAP Mpox CRM Madagascar 2026
-- [Profil utilisateur](user_role.md) — analyste données / épidémiologiste CRM Madagascar, R avancé, travail en français

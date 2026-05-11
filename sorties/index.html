@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rapports MPOX - Croix-Rouge Malagasy</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              background: linear-gradient(135deg, #D62B2B 0%, #8B1A1A 100%);
+              color: #333;
+              margin: 0;
+              padding: 20px;
+          }
+          .container {
+              max-width: 900px;
+              margin: 0 auto;
+              background: white;
+              padding: 40px;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          }
+          .header {
+              text-align: center;
+              margin-bottom: 40px;
+          }
+          .header h1 {
+              color: #D62B2B;
+              margin: 0;
+          }
+          .header p {
+              color: #666;
+              font-size: 14px;
+          }
+          .reports {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 30px;
+              margin-top: 30px;
+          }
+          .report-card {
+              border: 2px solid #D62B2B;
+              border-radius: 8px;
+              padding: 25px;
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .report-card:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 6px 12px rgba(214, 43, 43, 0.2);
+          }
+          .report-card h2 {
+              color: #D62B2B;
+              margin-top: 0;
+          }
+          .report-card p {
+              color: #666;
+              font-size: 14px;
+          }
+          .btn {
+              display: inline-block;
+              background-color: #D62B2B;
+              color: white;
+              padding: 12px 24px;
+              border-radius: 4px;
+              text-decoration: none;
+              font-weight: bold;
+              transition: background-color 0.3s;
+              margin-top: 15px;
+          }
+          .btn:hover {
+              background-color: #A01F1F;
+          }
+          @media (max-width: 768px) {
+              .reports {
+                  grid-template-columns: 1fr;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="header">
+              <h1>?? Enquête KAP Mpox</h1>
+              <p>Croix-Rouge Malagasy | 2026</p>
+          </div>
+
+          <p style="text-align: center; color: #666;">
+              Sélectionnez un rapport pour consulter les analyses détaillées :
+          </p>
+
+          <div class="reports">
+              <div class="report-card">
+                  <h2>?? Qualité des Données</h2>
+                  <p>Analyse détaillée de la qualité, complétude et intégrité des données collectées.</p>
+                  <a href="03_rapport_qualite.html" class="btn">Voir le rapport</a>
+              </div>
+
+              <div class="report-card">
+                  <h2>?? Analyse MPOX</h2>
+                  <p>Résultats de l'enquête KAP avec graphiques, descriptions et interprétations.</p>
+                  <a href="05_rapport_graphiques_analyses.html" class="btn">Voir le rapport</a>
+              </div>
+          </div>
+
+          <hr style="margin-top: 40px; color: #ddd;">
+          <p style="text-align: center; color: #999; font-size: 12px;">
+              Croix-Rouge Malagasy | Rapport généré le 2026
+          </p>
+      </div>
+  </body>
+  </html>

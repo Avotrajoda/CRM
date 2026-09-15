@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport d'analyse - Enquête KAP Mpox final</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f7fa; color: #333; line-height: 1.5; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #F5333F 0%, #A8232B 100%); color: white; text-align: center; padding: 50px 20px; border-radius: 8px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.3em; margin-bottom: 8px; }
+        .header p { opacity: 0.9; }
+        .back-link { display: inline-block; margin-bottom: 15px; color: #F5333F; text-decoration: none; font-weight: bold; }
+        .toc { background: white; padding: 20px 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .toc h2 { font-size: 1.1em; color: #F5333F; margin-bottom: 12px; }
+        .toc a { display: inline-block; background: #fdeaea; color: #A8232B; padding: 6px 14px; margin: 4px 6px 4px 0; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: bold; }
+        .toc a:hover { background: #F5333F; color: white; }
+        .section-block { background: white; border-radius: 8px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); scroll-margin-top: 15px; }
+        .section-block h2 { color: #F5333F; border-bottom: 3px solid #F5333F; padding-bottom: 8px; margin-bottom: 20px; }
+        .fig-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        .fig-block { display: grid; grid-template-columns: 340px 1fr; gap: 20px; align-items: center; border: 1px solid #eee; border-radius: 8px; padding: 15px; }
+        .fig-image { width: 100%; border-radius: 6px; border: 1px solid #ddd; }
+        .fig-caption h3 { color: #2C3E50; font-size: 1.05em; margin-bottom: 8px; }
+        .fig-caption p { color: #555; font-size: 0.95em; }
+        .footer { text-align: center; color: #666; margin-top: 30px; padding: 25px; background: white; border-radius: 8px; font-size: 0.9em; }
+        @media (max-width: 800px) { .fig-block { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Retour au portail final</a>
+        <div class="header">
+            <h1>📈 Rapport d'analyse — Enquête KAP Mpox</h1>
+            <p>Enquête final — juillet 2026 — Croix-Rouge Malagasy — 8 849 répondants — 61 figures</p>
+        </div>
+        <div class="toc">
+            <h2>Sections</h2>
+            <a href="#sec-0">A - Connaissance</a><a href="#sec-1">B - Perception du risque</a><a href="#sec-2">C - Pratiques</a><a href="#sec-3">D - Communication</a><a href="#sec-4">E - Vaccination</a><a href="#sec-5">F - Satisfaction</a><a href="#sec-6">G - Stigmatisation</a><a href="#sec-7">H - Engagement communautaire</a><a href="#sec-8">J - Analyses transversales</a><a href="#sec-9">K - Dashboard</a><a href="#sec-10">L - Démographie</a>
+        </div>
+        <section class="section-block" id="sec-0">
+            <h2>A - Connaissance</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/A1_sensibilisation.png" alt="Sensibilisation au Mpox" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Sensibilisation au Mpox</h3>
+                    <p>97.1% des répondants ont déjà entendu parler du Mpox, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/A2_transmission.png" alt="Modes de transmission cités" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Modes de transmission cités</h3>
+                    <p>Mode de transmission le plus cité : « Contact pers. infectée » (84.5% des répondants), sur 9 modalités. 33.1% des répondants citent au moins 2 modes corrects (contact rapproché, sang, mains sales).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/A3_symptomes.png" alt="Symptômes cités" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Symptômes cités</h3>
+                    <p>Symptôme le plus cité : « Lésions cutanées » (82.3% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/A4_prevention.png" alt="Mesures de prévention citées" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Mesures de prévention citées</h3>
+                    <p>Mesure de prévention le plus cité : « Lavage des mains » (86.0% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/A5_score_connaissance.png" alt="Score global de connaissance" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Score global de connaissance</h3>
+                    <p>27.6% des répondants ont un score de connaissance élevé (3/3 domaines maîtrisés), ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/A_dashboard_connaissance.png" alt="Tableau de bord des connaissances" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Tableau de bord des connaissances</h3>
+                    <p>L&#x27;indicateur le plus défaillant est « Score élevé (transmission + symptômes + prévention) » (27.6%) ; la fausse croyance la plus répandue est « Vaisselle commune (transmission) » (25.9%).</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-1">
+            <h2>B - Perception du risque</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/B2_mpox_communaute.png" alt="Réalité du Mpox dans la communauté" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Réalité du Mpox dans la communauté</h3>
+                    <p>78.3% des répondants pensent que le Mpox existe réellement dans leur communauté, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B3_origines_rumeurs.png" alt="Origines perçues du Mpox" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Origines perçues du Mpox</h3>
+                    <p>Origine perçue le plus cité : « Virus (correct) » (82.9% des répondants), sur 5 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B4_niveau_peur.png" alt="Niveau d&#x27;inquiétude" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Niveau d&#x27;inquiétude</h3>
+                    <p>23.8% des répondants se disent inquiets ou très inquiets d&#x27;être atteints du Mpox, ce qui traduit un niveau très faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B5_groupes_risque.png" alt="Groupes perçus à risque de transmission" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Groupes perçus à risque de transmission</h3>
+                    <p>Groupe perçu à risque le plus cité : « Immunodéprimés » (67.1% des répondants), sur 8 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B6_categories_vulnerables.png" alt="Catégories perçues comme vulnérables" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Catégories perçues comme vulnérables</h3>
+                    <p>Catégorie perçue comme vulnérable le plus cité : « Tout le monde » (74.2% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B7_adherence_rumeurs.png" alt="Adhésion aux rumeurs sur l&#x27;origine" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Adhésion aux rumeurs sur l&#x27;origine</h3>
+                    <p>38.0% des répondants adhèrent à au moins une rumeur sur l&#x27;origine du Mpox, ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B7b_deni_realite.png" alt="Déni de la réalité du Mpox" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Déni de la réalité du Mpox</h3>
+                    <p>10.0% des répondants nient la présence réelle du Mpox dans leur communauté, ce qui traduit un niveau très faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B8_perception_vs_realite.png" alt="Perception vs réalité scientifique" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Perception vs réalité scientifique</h3>
+                    <p>La dimension la plus éloignée de l&#x27;idéal est « Ne désigne pas les travailleurs(ses) du sexe comme groupe à risque + » (45.9%, écart de 54.1 points).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/B9_rumeurs_par_canal_info.png" alt="Rumeurs par canal d&#x27;information" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Rumeurs par canal d&#x27;information</h3>
+                    <p>Canal le plus associé aux rumeurs le plus cité : « SMS » (47.4% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-2">
+            <h2>C - Pratiques</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/C1_moments_lavage.png" alt="Moments de lavage des mains" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Moments de lavage des mains</h3>
+                    <p>84.5% des répondants se lavent les mains à au moins 2 moments critiques, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C2_produits_lavage.png" alt="Produits utilisés pour le lavage" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Produits utilisés pour le lavage</h3>
+                    <p>Produit le plus cité : « Eau + savon » (96.8% des répondants), sur 5 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C2b_barrieres_lavage_mains.png" alt="Barrière au lavage au savon" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Barrière au lavage au savon</h3>
+                    <p>Barrière le plus cité : « Pas de savon disponible » (62.1% des répondants), sur 4 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C3_isolement_faisabilite.png" alt="Faisabilité d&#x27;isoler une pièce" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Faisabilité d&#x27;isoler une pièce</h3>
+                    <p>40.2% des répondants jugent facile d&#x27;isoler une pièce en cas de symptômes, ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C4_materiel_faisabilite.png" alt="Faisabilité d&#x27;isoler le matériel" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Faisabilité d&#x27;isoler le matériel</h3>
+                    <p>47.6% des répondants jugent facile de réserver du matériel dédié en cas de symptômes, ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C5_decisionnaire_famille.png" alt="Décideur familial" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Décideur familial</h3>
+                    <p>Décideur familial le plus cité : « Mère » (49.4% des répondants), sur 9 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C6_recours_soins.png" alt="Recours aux soins" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Recours aux soins</h3>
+                    <p>Recours le plus cité : « Centre de santé » (96.8% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C7_intention_csb.png" alt="Intention de consulter un CSB" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Intention de consulter un CSB</h3>
+                    <p>96.0% des répondants iraient consulter un centre de santé en cas de symptômes, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C7b_connaissance_recours.png" alt="Connaissance du lieu de recours" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance du lieu de recours</h3>
+                    <p>93.4% des répondants savent où recevoir des soins liés au Mpox, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C8_distance_csb.png" alt="Distance perçue au centre de santé" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Distance perçue au centre de santé</h3>
+                    <p>14.3% des répondants estiment le centre de santé à plus d&#x27;1 heure, ce qui traduit un niveau très faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/C9_barrieres_acces.png" alt="Barrières à l&#x27;accès aux soins" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Barrières à l&#x27;accès aux soins</h3>
+                    <p>Barrière le plus cité : « Peur » (44.3% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-3">
+            <h2>D - Communication</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/D1_canaux_divergent.png" alt="Canaux actuels vs préférés" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Canaux actuels vs préférés</h3>
+                    <p>Le canal avec le plus grand écart demande/offre est « Radio » (0.0% actuel vs 65.0% préféré, écart de 65.0 points).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/D2_utilite_informations.png" alt="Utilité des informations reçues" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Utilité des informations reçues</h3>
+                    <p>92.1% des répondants trouvent utiles les informations reçues sur le Mpox, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/D4_sources_confiance_lollipop.png" alt="Sources de confiance" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Sources de confiance</h3>
+                    <p>La CRM est citée comme source fiable par 86.0% des répondants. Source de confiance le plus cité : « CRM » (86.0% des répondants), sur 8 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-4">
+            <h2>E - Vaccination</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/E1_connaissance_vaccin.png" alt="Connaissance du vaccin" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance du vaccin</h3>
+                    <p>89.2% des répondants connaissent l&#x27;existence du vaccin contre le Mpox, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/E2_rumeurs_vaccin.png" alt="Exposition aux rumeurs sur le vaccin" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Exposition aux rumeurs sur le vaccin</h3>
+                    <p>27.7% des répondants ont déjà vu/entendu de mauvaises informations sur le vaccin, ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/E3_acceptation_vaccin.png" alt="Acceptation vaccinale" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Acceptation vaccinale</h3>
+                    <p>78.8% des répondants se disent prêts à se faire vacciner contre le Mpox, ce qui traduit un niveau élevé.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/E4_raisons_refus_vaccin.png" alt="Raisons de refus vaccinal" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Raisons de refus vaccinal</h3>
+                    <p>Raison de refus le plus cité : « Peur effets secondaires » (34.3% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/E5_autonomie_vaccinale.png" alt="Autonomie décisionnelle vaccinale" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Autonomie décisionnelle vaccinale</h3>
+                    <p>33.5% des répondants ont besoin de l&#x27;autorisation d&#x27;un tiers pour se faire vacciner, ce qui traduit un niveau encore faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/E6_site_vaccination.png" alt="Site préféré de vaccination" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Site préféré de vaccination</h3>
+                    <p>Site préféré le plus cité : « Hôpital » (84.0% des répondants), sur 5 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-5">
+            <h2>F - Satisfaction</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/F_satisfaction_divergent.png" alt="Satisfaction des services" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Satisfaction des services</h3>
+                    <p>Bénéficiaires déclarés : CRM 74.4%, CSB 55.9%, vaccination 48.5%. Service avec la plus forte satisfaction (cumul satisfait+très satisfait) le plus cité : « Activités de la CRM » (96.5% des répondants), sur 3 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/F2_raisons_insatisfaction.png" alt="Raisons d&#x27;insatisfaction" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Raisons d&#x27;insatisfaction</h3>
+                    <p>Raison d&#x27;insatisfaction le plus cité : « Temps d&#x27;attente » (40.0% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/F4_prevention_post_vaccin.png" alt="Importance de la prévention post-vaccination" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Importance de la prévention post-vaccination</h3>
+                    <p>Niveau d&#x27;importance perçu le plus cité : « Très important » (58.8% des répondants), sur 5 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-6">
+            <h2>G - Stigmatisation</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/G1_tabou_mpox.png" alt="Mpox tabou dans la communauté" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Mpox tabou dans la communauté</h3>
+                    <p>11.2% des répondants trouvent difficile de parler du Mpox dans leur communauté, ce qui traduit un niveau très faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/G2_discrimination_observee.png" alt="Discrimination observée" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Discrimination observée</h3>
+                    <p>20.5% des répondants ont déjà observé un comportement discriminatoire envers une personne atteinte du Mpox, ce qui traduit un niveau très faible.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/G3_groupes_discrimination.png" alt="Groupes victimes de discrimination" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Groupes victimes de discrimination</h3>
+                    <p>Groupe perçu comme victime le plus cité : « Malades Mpox » (52.2% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/G4_solutions_stigmatisation.png" alt="Solutions contre la stigmatisation" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Solutions contre la stigmatisation</h3>
+                    <p>Thème le plus proposé le plus cité : « Sensibilisation / communication » (19.6% des répondants), sur 8 modalités. 41.5% des réponses ne rentrent dans aucun thème récurrent (« Autres réponses »).</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-7">
+            <h2>H - Engagement communautaire</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/H1_representants_communaute.png" alt="Représentants communautaires" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Représentants communautaires</h3>
+                    <p>Acteur le plus cité le plus cité : « Leader communautaire » (66.8% des répondants), sur 9 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/H3_connaissance_feedback.png" alt="Connaissance d&#x27;un mécanisme de feedback" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance d&#x27;un mécanisme de feedback</h3>
+                    <p>72.3% des répondants connaissent un moyen de faire des remarques/plaintes sur le Mpox, ce qui traduit un niveau modéré.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/H4_canal_feedback_prefere.png" alt="Canal de feedback préféré" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Canal de feedback préféré</h3>
+                    <p>Moyen de feedback préféré le plus cité : « Appel téléphonique » (34.1% des répondants), sur 7 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/H5_acteurs_confiance_engagement.png" alt="Acteurs de confiance" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Acteurs de confiance</h3>
+                    <p>Acteur de confiance le plus cité le plus cité : « Agents de santé communautaires » (64.2% des répondants), sur 9 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-8">
+            <h2>J - Analyses transversales</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/J1_gap_connaissance_pratique.png" alt="Écart connaissance/pratique du lavage des mains" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Écart connaissance/pratique du lavage des mains</h3>
+                    <p>Connaissance du lavage des mains comme prévention vs pratique effective (≥2 moments critiques) : 84.5% contre 86.0% (écart supérieur de 1.5 points).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/J2_parcours_vaccinal.png" alt="Parcours vaccinal" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Parcours vaccinal</h3>
+                    <p>Sur 8849 répondants connaissant le vaccin (89.2%), 27.7% ont été exposés à de mauvaises informations et 78.8% sont prêts à se faire vacciner.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-9">
+            <h2>K - Dashboard</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/K_dashboard_indicateurs.png" alt="Tableau de bord des 6 indicateurs clés" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Tableau de bord des 6 indicateurs clés</h3>
+                    <p>Synthèse visuelle des 6 indicateurs les plus suivis : voir les fiches individuelles pour le détail de chaque valeur.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-block" id="sec-10">
+            <h2>L - Démographie</h2>
+            <div class="fig-grid">
+            <div class="fig-block">
+                <img src="figures/L1_repartition_sexe.png" alt="Répartition par sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Répartition par sexe</h3>
+                    <p>L&#x27;échantillon est composé de 54.9% de femmes et 45.1% d&#x27;hommes.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L2_repartition_age.png" alt="Répartition par tranche d&#x27;âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Répartition par tranche d&#x27;âge</h3>
+                    <p>La tranche d&#x27;âge la plus représentée est « 18 - 29 ans » (26.1%).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L2b_repartition_age_sexe.png" alt="Répartition croisée sexe × âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Répartition croisée sexe × âge</h3>
+                    <p>Tranche la plus représentée chez les hommes : « 18 - 29 ans » (11.5% du total) ; chez les femmes : « 18 - 29 ans » (14.7% du total).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L3_connaissance_par_sexe.png" alt="Connaissance élevée par sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance élevée par sexe</h3>
+                    <p>Score de connaissance élevé, hommes vs femmes : 27.58% contre 27.63% — écart quasi nul (0.05 point), pas de différence notable entre les deux groupes.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L4_connaissance_par_age.png" alt="Connaissance élevée par âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance élevée par âge</h3>
+                    <p>Tranche d&#x27;âge avec le score de connaissance élevé le plus fréquent le plus cité : « 6 - 12 ans » (35.1% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L4b_connaissance_par_age_sexe.png" alt="Connaissance élevée par âge et sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Connaissance élevée par âge et sexe</h3>
+                    <p>L&#x27;écart hommes-femmes le plus marqué se trouve chez les « 80 ans et plus » (13.8 points d&#x27;écart).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L5_vaccination_par_sexe.png" alt="Acceptation vaccinale par sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Acceptation vaccinale par sexe</h3>
+                    <p>Acceptation vaccinale, hommes vs femmes : 78.3% contre 79.3% (écart supérieur de 1.0 points).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L6_vaccination_par_age.png" alt="Acceptation vaccinale par âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Acceptation vaccinale par âge</h3>
+                    <p>Tranche d&#x27;âge avec l&#x27;acceptation vaccinale la plus forte le plus cité : « 80 ans et plus » (87.1% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L7_acces_soins_par_sexe.png" alt="Accès aux soins par sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Accès aux soins par sexe</h3>
+                    <p>Accès potentiel aux soins formels, hommes vs femmes : 90.8% contre 91.6% (écart supérieur de 0.8 points).</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L8_acces_soins_par_age.png" alt="Accès aux soins par âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Accès aux soins par âge</h3>
+                    <p>Tranche d&#x27;âge avec le meilleur accès potentiel aux soins le plus cité : « 0 - 5 ans » (100.0% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L9_discrimination_par_sexe.png" alt="Discrimination observée par sexe" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Discrimination observée par sexe</h3>
+                    <p>A observé de la discrimination, hommes vs femmes : 20.62% contre 20.36% — écart quasi nul (0.26 point), pas de différence notable entre les deux groupes.</p>
+                </div>
+            </div>
+            <div class="fig-block">
+                <img src="figures/L10_discrimination_par_age.png" alt="Discrimination observée par âge" class="fig-image">
+                <div class="fig-caption">
+                    <h3>Discrimination observée par âge</h3>
+                    <p>Tranche d&#x27;âge ayant le plus observé de discrimination le plus cité : « 80 ans et plus » (32.3% des répondants), sur 10 modalités.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <div class="footer">
+            <p>Croix-Rouge Malagasy | Enquête KAP Mpox — enquête final, juillet 2026</p>
+            <p>Interprétations générées automatiquement à partir des données nettoyées (script 02_analyse_mpox.R)</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="fr">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Rapports MPOX - Croix-Rouge Malagasy</title>
+      <title>Rapports MPOX final - Croix-Rouge Malagasy</title>
       <style>
           body {
               font-family: Arial, sans-serif;
-              background: linear-gradient(135deg, #D62B2B 0%, #8B1A1A 100%);
+              background: linear-gradient(135deg, #F5333F 0%, #A8232B 100%);
               color: #333;
               margin: 0;
               padding: 20px;
@@ -20,14 +20,15 @@
               border-radius: 8px;
               box-shadow: 0 4px 6px rgba(0,0,0,0.1);
           }
+          .back-link { display: inline-block; margin-bottom: 15px; color: #F5333F; text-decoration: none; font-weight: bold; }
           .header {
               text-align: center;
               margin-bottom: 40px;
           }
           .header h1 {
-              color: #D62B2B;
+              color: #F5333F;
               margin: 0;
-              font-size: 2.5em;
+              font-size: 2.3em;
           }
           .header p {
               color: #666;
@@ -40,7 +41,7 @@
               margin-top: 30px;
           }
           .report-card {
-              border: 2px solid #D62B2B;
+              border: 2px solid #F5333F;
               border-radius: 8px;
               padding: 25px;
               text-align: center;
@@ -48,10 +49,10 @@
           }
           .report-card:hover {
               transform: translateY(-5px);
-              box-shadow: 0 6px 12px rgba(214, 43, 43, 0.2);
+              box-shadow: 0 6px 12px rgba(245, 51, 63, 0.2);
           }
           .report-card h2 {
-              color: #D62B2B;
+              color: #F5333F;
               margin-top: 0;
               font-size: 1.3em;
           }
@@ -62,7 +63,7 @@
           }
           .btn {
               display: inline-block;
-              background-color: #D62B2B;
+              background-color: #F5333F;
               color: white;
               padding: 12px 24px;
               border-radius: 4px;
@@ -72,7 +73,7 @@
               margin-top: 15px;
           }
           .btn:hover {
-              background-color: #A01F1F;
+              background-color: #A8232B;
           }
           @media (max-width: 768px) {
               .reports {
@@ -83,44 +84,33 @@
   </head>
   <body>
       <div class="container">
+          <a href="../index.html" class="back-link">&larr; Retour au portail principal</a>
           <div class="header">
-              <h1>📊 Enquête KAP Mpox</h1>
-              <p>Croix-Rouge Malagasy | 2026</p>
+              <h1>📊 Enquête KAP Mpox — final</h1>
+              <p>Croix-Rouge Malagasy | Juillet 2026 | 8 849 répondants</p>
           </div>
 
           <p style="text-align: center; color: #666; font-size: 1.1em;">
-              Sélectionnez un rapport pour consulter les analyses détaillées :
+              Nouvelle collecte incluant Sexe/Âge, sur 7 régions et 16 districts :
           </p>
 
           <div class="reports">
               <div class="report-card">
-                  <h2>📋 Qualité des Données</h2>
-                  <p>Analyse détaillée de la qualité, complétude et intégrité des données collectées.</p>
-                  <a href="03_rapport_qualite.html" class="btn">Voir le rapport</a>
+                  <h2>📈 Rapport d'analyse</h2>
+                  <p>Les 61 graphiques accompagnés de leur interprétation, organisés par thème (connaissance, perception, pratiques, vaccination, stigmatisation, démographie...).</p>
+                  <a href="rapport.html" class="btn">Voir le rapport</a>
               </div>
 
               <div class="report-card">
-                  <h2>📈 Analyse MPOX</h2>
-                  <p>Résultats de l'enquête KAP avec graphiques, descriptions et interprétations.</p>
-                  <a href="05_rapport_graphiques_analyses.html" class="btn">Voir le rapport</a>
-              </div>
-
-              <div class="report-card">
-                  <h2>🎨 Tous les Graphiques</h2>
-                  <p>Galerie complète avec tous les 53 graphiques de l'analyse et boutons de téléchargement.</p>
-                  <a href="tous_les_graphiques.html" class="btn">Voir la galerie</a>
-              </div>
-
-              <div class="report-card" style="border-color:#F5333F;">
-                  <h2>🆕 Enquête MPOX final (Juillet 2026)</h2>
-                  <p>Nouvelle collecte avec Sexe/Âge — 61 graphiques et interprétations, 8 849 répondants.</p>
-                  <a href="final/index.html" class="btn" style="background-color:#F5333F;">Voir le rapport final</a>
+                  <h2>🎨 Tous les graphiques</h2>
+                  <p>Galerie complète des 61 graphiques avec boutons de téléchargement.</p>
+                  <a href="galerie.html" class="btn">Voir la galerie</a>
               </div>
           </div>
 
           <hr style="margin-top: 40px; color: #ddd;">
           <p style="text-align: center; color: #999; font-size: 12px;">
-              Croix-Rouge Malagasy | Rapport généré le 2026
+              Croix-Rouge Malagasy | Enquête final — juillet 2026
           </p>
       </div>
   </body>
